@@ -42,8 +42,8 @@ provider:
 #            - "/*"
 
 # you can define service wide environment variables here
-#  environment:
-#    variable1: value1
+  environment:
+    GOOGLE_APPLICATION_CREDENTIALS: ./lib/client_secret.json
 
 # you can add packaging information here
 #package:

@@ -5,6 +5,9 @@ const sampleCommandBody = 'token=TOKENID&team_id=TEAMID&team_domain=DOMAIN&chann
 
 test('validate tracking info arguments length', t => {
 	t.is(trackQueryParser.validateTrackingInfo(sampleCommandBody), true);
+	t.throws(() => {
+		trackQueryParser.getQueryVariable('nope', sampleCommandBody);
+	}, Error);
 });
 
 test('extract tracking info', t => {
