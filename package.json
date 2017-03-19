@@ -1,0 +1,25 @@
+{
+  "name": "time-tracker-slack-gsheets",
+  "version": "0.0.1",
+  "description": "A Slack based time tracking application which uses Google Spreadsheets for storage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ersel/time-tracker-slack-gsheets.git"
+  },
+  "author": "Ersel Aker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ersel/time-tracker-slack-gsheets/issues"
+  },
+  "homepage": "https://github.com/ersel/time-tracker-slack-gsheets#readme",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "eslint": "^3.18.0",
+    "nyc": "^10.1.2"
+  }
+}
