@@ -26,6 +26,7 @@
     "bluebird": "^3.5.0",
     "google-auth-library": "^0.10.0",
     "googleapis": "^18.0.0",
-    "leven": "^2.1.0"
+    "leven": "^2.1.0",
+    "request-promise": "^4.2.0"
   }
 }

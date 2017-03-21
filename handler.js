@@ -2,31 +2,28 @@
 const trackQueryParser = require('./lib/parsers/trackQuery.js');
 const timeTracker = require('./lib/timeTrack.js');
 
-module.exports.hello = (event, context, callback) => {
+module.exports.track = (event, context, callback) => {
 	let parsedCommand = trackQueryParser.parseTrackingInfo(event.body);
+	let callbackUrl = trackQueryParser.extractSupplementaryInfo(event.body).responseUrl;
 
 	const response = {
 		statusCode: 200,
 		body: ''
 	};
+	// return 200 back to Slack, we'll respond via
+	// callback URL in a bit...
+	callback(null, response);
 
 	if(parsedCommand[0] === 'help') {
 		// get help command
 		response.body = 'help';
-		callback(null, response);
 	} else if (parsedCommand[0] === 'list') {
 		// get list of business activites
-		response.body = 'list';
-		callback(null, response);
+		timeTracker.activityList(callbackUrl);
 	} else if (parsedCommand[0] === 'url') {
-		// get the url to the spreadsheet
-		response.body = 'url';
-		callback(null, response);
+		timeTracker.spreadsheetURL(callbackUrl);
 	} else {
 		// track time
-		timeTracker(event.body).then((result) => {
-			response.body = result;
-			callback(null, response);
-		});
+		timeTracker.track(event.body, callbackUrl);
 	}
 };

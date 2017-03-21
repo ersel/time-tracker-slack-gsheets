@@ -1,19 +1,15 @@
 const test = require('ava').test;
 const activity = require('../../lib/parsers/activity.js');
 
-const activityListSpreadSheet = [
-	['onboarding call', 'onboarding, oc'],
-	['risk assessment of the project', 'risk, ra']
-];
+//const activityListSpreadSheet = [
+	//['onboarding call', 'onboarding, oc'],
+	//['risk assessment of the project', 'risk, ra']
+//];
 
 const parsedActivityList = {
 	'onboarding call': ['onboarding', 'oc'],
 	'risk assessment of the project': ['risk', 'ra']
 };
-
-test('parse activity list from spreadsheet data', t => {
-	t.deepEqual(activity.parseActivityListFromSpreadSheet(activityListSpreadSheet), parsedActivityList);
-});
 
 test('validate activity input', t => {
 	t.deepEqual(activity.validateInput('onboarding call', parsedActivityList), {valid:true, activity:'onboarding call'});
