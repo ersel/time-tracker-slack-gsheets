@@ -12,4 +12,8 @@ test('new test', async t => {
 
 test('new test', async t => {
 	t.is(await timeTrack.spreadsheetURL('http://example.com'));
-})
+});
+
+test('new test', async t => {
+	t.is(await timeTrack.getHelp('http://example.com'));
+});

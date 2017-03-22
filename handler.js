@@ -15,12 +15,13 @@ module.exports.track = (event, context, callback) => {
 	callback(null, response);
 
 	if(parsedCommand[0] === 'help') {
-		// get help command
-		response.body = 'help';
+		// get help
+		timeTracker.getHelp(callbackUrl);
 	} else if (parsedCommand[0] === 'list') {
 		// get list of business activites
 		timeTracker.activityList(callbackUrl);
 	} else if (parsedCommand[0] === 'url') {
+		// get the URL of the spreadsheet
 		timeTracker.spreadsheetURL(callbackUrl);
 	} else {
 		// track time
