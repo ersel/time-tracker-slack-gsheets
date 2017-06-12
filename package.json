@@ -20,7 +20,8 @@
   "devDependencies": {
     "ava": "^0.18.2",
     "eslint": "^3.18.0",
-    "nyc": "^10.1.2"
+    "nyc": "^10.1.2",
+    "proxyquire": "^1.8.0"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
