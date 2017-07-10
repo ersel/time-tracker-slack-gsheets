@@ -16,6 +16,8 @@ Here is a 1 min demo of the Time Tracker app. Click on the image to watch the vi
 Time Track function is deployed as an AWS Lambda function which is served behind an API Gateway. Orchestration of AWS resources and deployment of the application is managed by the [Serverless library](https://serverless.com/).
 <img src="http://erselaker.com/assets/images/slack-time-tracker-architecture.png" alt="Time Tracker Serverless Architecture" width="70%" >
 
+[CloudCraft was used to create the architecture diagram.](https://cloudcraft.co/)
+
 # Set-up
 To start using the application, you would need AWS, Slack and Google accounts. 
 
